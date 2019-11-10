@@ -1,0 +1,113 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tax Refund Estimator Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    </style>
+</head>
+<body style = "">
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li class="logo"><img src="icon.png"></li>
+                <li class="active"><a href="index.html" style="color: #b2b1b1;">Home</a></li>
+                <li><a href="data.html" style="color: #b2b1b1;">Tax Data Informatics</a></li>
+                <li><a href="estimate.html" style="color: #b2b1b1;">Tax Refund Prediction</a></li>
+                <li><a href="contact.html" style="color: #b2b1b1;">Contact</a></li>
+            </ul>
+        </div>
+        <div class="banner">
+            <div class="app-text">
+                <h1>Marital Status Comparison Graph</h1>
+            </div>
+        </div>
+
+        <div class = "one">
+
+
+        <div class = "img1" style="width:25%; height: 25%; margin-top: 180px; margin-left: 150px">
+            <iframe class="chartjs-hidden-iframe" tabindex="-1" style=" overflow: hidden; border: 0px; margin: 0px; top: 160px; left: 0px; bottom: 0px; right: 50px; height: 10%; width: 10%; position: relative; pointer-events: none; z-index: -1;" src="./index_files/saved_resource.html">
+            </iframe>
+            <canvas id="canvas" width="50" height="50" style="display: block; height: 168px; width: 336px;"></canvas>
+        </div>
+
+        <script>
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#FFF';
+    var lineChartData = {
+        labels: ["Married", "Widowed", "Divorced"],
+        datasets: [{
+            label: "Tax Refund Amount",
+            borderColor: 'rgba(255, 0, 0, 0.6)',
+            backgroundColor: 'rgba(255, 0, 0, 0.6)',
+            fill: false,
+            data: [
+                10250,
+                9898,
+                9825
+            ],
+            yAxisID: "y-axis-1",
+        }, {
+            label: "Taxable Income",
+            borderColor: 'rgba(0, 0, 255, 0.6)',
+            backgroundColor: 'rgba(0, 0, 255, 0.6)',
+            fill: false,
+            data: [
+                75954,
+                75923,
+                74036
+            ],
+            yAxisID: "y-axis-2"
+        }]
+    };
+
+    window.onload = function() {
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myLine = Chart.Line(ctx, {
+            data: lineChartData,
+            options: {
+                responsive: true,
+                hoverMode: 'index',
+                stacked: false,
+                title:{
+                    display: true,
+                    text:'Marital Status Comparison Graph'
+                },
+                scales: {
+                    yAxes: [{
+                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: "left",
+                        id: "y-axis-1",
+                    }, {
+                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: "right",
+                        id: "y-axis-2",
+
+                        // grid line settings
+                        gridLines: {
+                            drawOnChartArea: false, // only want the grid lines for one axis to show up
+                        },
+                    }],
+                }
+            }
+        });
+    };
+
+
+
+    </script>
+        </div>
+    </div>
+</body>
+</html>

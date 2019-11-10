@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tax Refund Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+    <div class="container"  style="height:130%;">
+        <div class="menu">
+            <ul>
+                <li class="logo"><img src="icon.png"></li>
+                <li class="active"><a href="index.html" style="color: #b2b1b1;">Home</a></li>
+                <li><a href="data.html" style="color: #b2b1b1;">Tax Data Informatics</a></li>
+                <li><a href="estimate.html" style="color: #b2b1b1;">Tax Refund Prediction</a></li>
+                <li><a href="contact.html" style="color: #b2b1b1;">Contact</a></li>
+            </ul>
+        </div>
+        <div class ="header">
+            <h1>Tax Refund Estimator</h1>
+            <p>
+                This is a tool that takes in your general information and gives you back an estimate on how much money you
+                should expect in tax returns.
+            </p>
+        </div>
+        <div class="form" style="margin-top: 170px;">
+            <form action ="page.html" method = "GET">
+                <input type="text" placeholder="Name"/>
+                <input type="text" placeholder="E-Mail" />
+                <input type="number" placeholder="Age" name = "Age"/>
+                <input type="number" placeholder="Zip-Code" />
+                <input type="number" placeholder="Taxable Income" name = "Income" />
+                <input type = "text" placeholder="Marital Status: Married, Widowed, Divorced" name = "maritalStat"/>
+                <input type="number" placeholder="Number of Dependents" />
+                <input type = "text" placeholder="Head of Household: True/False" />
+                <input type = "text" placeholder="Filed State Taxes: True/False" />
+                <input type = "text" placeholder="Mortgage Loan: True/False" />
+                <input type = "text" placeholder="Student Loan: True/False" />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
